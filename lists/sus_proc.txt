@@ -1,4 +1,3 @@
-notepad
 svch0st
 svhost
 scvhost
