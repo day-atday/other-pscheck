@@ -25,7 +25,7 @@ Checks services with executables outside the Windows folder
 Compares the hash of the file linked to the service to the ones in the list
 Checks if the file of the service has signature
 
-***Hidden**
+**Hidden**
 Checks for hidden files in a directory
 
 **Firewall**
