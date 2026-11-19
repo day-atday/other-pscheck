@@ -31,6 +31,9 @@ Checks for hidden files in a directory
 **Firewall**
 Looks for outbound firewall enabled rules
 
+**Windows**
+Looks at Run and RunOnce Windows Registry keys and Windows Defender exclusions
+
 **Files**
 Looks for files or new files in a directory and compares the hash with the ones in the list -- Refreshes
 
