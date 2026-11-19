@@ -1,0 +1,201 @@
+<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="pscheck "
+    Height="720"
+    Width="1280"
+    Background="Black">
+
+    <!-- APP RESOURCES -->
+    <Window.Resources>
+        <LinearGradientBrush x:Key="checkgrad" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#ffffff" Offset="0" />
+            <GradientStop Color="#c2c2c2" Offset="1" />
+        </LinearGradientBrush>
+
+        <Style x:Key="pscheck" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource checkgrad}"/>
+
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#00021e"/>
+            <Setter Property="Foreground" Value="White"/>
+
+            <Setter Property="Template">
+
+                <!-- Button on-hover-->
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1">
+
+                            <ContentPresenter
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter 
+                                        TargetName="border"
+                                        Property="Background"
+                                        Value="Black">
+                                </Setter>
+                                <!-- Button on-hover glow-->
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect 
+                                                        BlurRadius="8"
+                                                        Color="#0011ff"
+                                                        ShadowDepth="2"
+                                                        Opacity="0.7"/>
+                                    </Setter.Value>
+                                </Setter>
+                                
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#fff" />
+        
+        </Style>
+
+        
+    </Window.Resources>
+
+    
+    <Grid Background="#00021e">
+
+        <!-- TITLE -->
+        <TextBlock Text="PSCHECK"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top"
+                   Height="32"
+                   TextAlignment="Center"
+                   FontSize="27"
+                   FontWeight="Bold"
+                   FontStyle="Italic"
+                   x:Name="pscheck"
+                   Style="{StaticResource pscheck}"
+                   />
+
+        <!-- LEFT MENU -->
+        <StackPanel Margin="10,72,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="104"
+                    Orientation="Vertical">
+            
+            <Button Content="process" Height="32" x:Name="process"/>
+            <Button Content="services" Height="32" x:Name="services"/>
+            <Button Content="execution" Height="32" x:Name="execution"/>
+            <Button Content="files" Height="32" x:Name="files"/>
+            <Button Content="firewall" Height="32" x:Name="firewall"/>
+            <Button Content="network" Height="32" x:Name="network"/>
+            <Button Content="hidden" Height="32" x:Name="hidden"/>
+            <Button Content="windows" Height="32" x:Name="windows"/>
+
+        </StackPanel>
+
+
+        <Grid 
+        Margin="8,344,0,0"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Width="104"
+        Height="104">
+
+            <CheckBox 
+            Content="AutoRefresh"
+            Margin="10,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="112"
+            Height="24"
+            x:Name="autorefresh"
+            IsChecked = "True"
+             />
+
+            <Button
+            Content="Button"
+            Margin="8,40,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="88"
+            Height="32" />
+
+        </Grid>
+        
+
+        <!-- LABELS -->
+        <TextBlock Text="Run menu"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="10,48,0,0"
+                   Width="104"
+                   TextAlignment="Center"
+                   FontWeight="Bold"
+                   FontStyle="Italic"
+                   Foreground="White"
+                   FontSize="17"/>
+
+        <TextBlock Text="Log Output"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="16,48,-16,0"
+            Width="144"
+            TextAlignment="Center"
+            FontWeight="Bold"
+            FontStyle="Italic"
+            Foreground="White"
+            FontSize="17"/>
+
+        <!-- OUTPUT -->
+            <Border 
+            Margin="120,72,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="1100"
+            Height="576"
+            Background="Black">
+
+                <Grid Height="576" HorizontalAlignment="Center" VerticalAlignment="Top" Width="1101">
+                    <TextBox 
+                    x:Name="tbOutput"
+                    IsReadOnly="True"
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Auto"
+                    Background="Black"
+                    Foreground="White"
+                    BorderThickness="3"
+                    BorderBrush="White" />
+                </Grid>
+
+            </Border>
+
+            <StackPanel Margin="10,384,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="104"
+                    Orientation="Vertical">
+            
+                <Button Content="auto" Height="32" x:Name="auto"/>
+                <Button Content="report" Height="32" x:Name="report"/>
+
+            </StackPanel>
+        <TextBlock Text="1.0" FontSize="14" Margin="695,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Foreground="White"/>
+    </Grid>
+</Window>
+
