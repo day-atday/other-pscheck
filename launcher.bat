@@ -8,7 +8,6 @@ IF NOT EXIST %mypath%%file% (
 
 cd gui
 
-:: cmd /c start /min "" pwsh -WindowStyle Hidden -ExecutionPolicy Bypass -File "gui.ps1"
 
 SET "SCRIPT_PATH=gui.ps1"
 
