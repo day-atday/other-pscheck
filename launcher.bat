@@ -8,7 +8,6 @@ IF NOT EXIST %mypath%%file% (
 
 cd gui
 
-
 SET "SCRIPT_PATH=gui.ps1"
 
 where pwsh >nul 2>&1
